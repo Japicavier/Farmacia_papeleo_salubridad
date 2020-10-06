@@ -63,7 +63,7 @@ for i in range (len(lista_conjunta)):
 #PARA CUANDO SE QUIERA SACAR DE UNA HOJA DE WORD CON EL FORMATO ESTABLECIDO
 ##https://www.geeksforgeeks.org/python-working-with-docx-module/
 ##ESPECIFICAR
-#doc = Document("E:\SAN XAVIER\INFORMACION\Archivos Salubridad\LISTADO DE ANTIBIOTICOS GENERICO (A2) HEROICO.docx")
+#doc = Document("Formato.docx") #dirección del archivo
 #tables = doc.tables
 #cont = 0
 #lista = []
