@@ -1,4 +1,4 @@
-   #https://python-docx.readthedocs.io/en/latest/index.html
+  #https://python-docx.readthedocs.io/en/latest/index.html
 from docx import Document
 from docx.shared import Inches
 
@@ -24,7 +24,7 @@ def depurar (lista):
 ##PARA SACAR LOS DATOS DIRECTAMENTE DE MICROSOFT ACCESS
 #https://datatofish.com/how-to-connect-python-to-ms-access-database-using-pyodbc/
 #ESPECIFICAR
-conn = pyodbc.connect(r'Driver={Microsoft Access Driver (*.mdb)};DBQ=C:\Users\javie\Documents\Programas\be.mdb;')
+conn = pyodbc.connect(r'Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=E:\fin de año panamericana\be.mdb;')
 cursor = conn.cursor()
 cursor.execute("select * from Productos")
 cont=0
@@ -35,7 +35,10 @@ for row in cursor.fetchall():
     if (row[1].find("A1.")!=(-1)) or (row[1].find("A2.")!=(-1)):
         cont+=1
         antibiotico.append(row[1])
-        sustancia.append(row[6])
+        if (row[32]==None):
+            sustancia.append(" ")
+        else:
+            sustancia.append(row[32])
         existentes.append(row[13])
 depurar(antibiotico)
 depurar(sustancia)
@@ -98,7 +101,7 @@ for i in lista:
 
     #https://www.geeksforgeeks.org/python-working-with-docx-module/
     #https://stackoverflow.com/questions/24031011/python-docx-library-text-align
-    document.add_paragraph("No.______").alignment = 2
+    document.add_paragraph("No.______________").alignment = 2
     
     linea_arriba = document.add_table(1,2)
     linea_arriba.columns[0].cells[0].width = Cm(29.19)
@@ -161,5 +164,4 @@ for i in lista:
     cont+=1
 
 #ESPECIFICAR
-document.save('Demo.docx')
-
+document.save('FinP21.docx')
