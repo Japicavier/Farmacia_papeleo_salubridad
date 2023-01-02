@@ -1,4 +1,4 @@
-  #https://python-docx.readthedocs.io/en/latest/index.html
+   #https://python-docx.readthedocs.io/en/latest/index.html
 from docx import Document
 from docx.shared import Inches
 
@@ -24,7 +24,7 @@ def depurar (lista):
 ##PARA SACAR LOS DATOS DIRECTAMENTE DE MICROSOFT ACCESS
 #https://datatofish.com/how-to-connect-python-to-ms-access-database-using-pyodbc/
 #ESPECIFICAR
-conn = pyodbc.connect(r'Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=E:\fin de año panamericana\be.mdb;')
+conn = pyodbc.connect(r'Driver={Microsoft Access Driver (*.mdb)};DBQ=G:\USBs\discoExt\Programas\output\be.mdb;')
 cursor = conn.cursor()
 cursor.execute("select * from Productos")
 cont=0
@@ -66,7 +66,7 @@ for i in range (len(lista_conjunta)):
 #PARA CUANDO SE QUIERA SACAR DE UNA HOJA DE WORD CON EL FORMATO ESTABLECIDO
 ##https://www.geeksforgeeks.org/python-working-with-docx-module/
 ##ESPECIFICAR
-#doc = Document("Formato.docx") #dirección del archivo
+#doc = Document("E:\SAN XAVIER\INFORMACION\Archivos Salubridad\LISTADO DE ANTIBIOTICOS GENERICO (A2) HEROICO.docx")
 #tables = doc.tables
 #cont = 0
 #lista = []
@@ -101,7 +101,7 @@ for i in lista:
 
     #https://www.geeksforgeeks.org/python-working-with-docx-module/
     #https://stackoverflow.com/questions/24031011/python-docx-library-text-align
-    document.add_paragraph("No.______________").alignment = 2
+    document.add_paragraph("No.______").alignment = 2
     
     linea_arriba = document.add_table(1,2)
     linea_arriba.columns[0].cells[0].width = Cm(29.19)
@@ -164,4 +164,6 @@ for i in lista:
     cont+=1
 
 #ESPECIFICAR
-document.save('FinP21.docx')
+document.save('Demo.docx')
+
+
