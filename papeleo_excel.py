@@ -81,13 +81,13 @@ for i in lista:
     section.left_margin = Cm(1)
     section.right_margin = Cm(1)
 
-    document.add_paragraph("No.______     ").alignment = 2
+    document.add_paragraph("No.__________________").alignment = 2
     
     linea_arriba = document.add_table(1,2)
     linea_arriba.columns[0].cells[0].width = Cm(29.19)
     linea_arriba.columns[1].cells[0].width = Cm(4.75)
     linea_arriba.rows[0].cells[0].text = 'ESTA PÁGINA ESTÁ DEDICADA A: ' + i
-    linea_arriba.rows[0].cells[1].text = 'PASAR AL FOLIO:________'
+    linea_arriba.rows[0].cells[1].text = 'PASAR AL FOLIO:__________'
 
     menuTable = document.add_table(22,12)
     menuTable.width = Cm(32.69)
