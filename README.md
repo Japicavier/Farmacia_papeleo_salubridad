@@ -7,3 +7,9 @@ Un programa para hacer las hojas que pide salubridad para el registro de medicin
 - Funciona con Python 3.10.16
 - Instalar requirements antes de ejecutar
 - Cambiar año y título del archivo
+
+# Setup
+pyenv local 3.10.11
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt

@@ -19,13 +19,15 @@ def depurar (lista):
 
 # SETUP
 base_path = Path(__file__).parent
-tabla_productos = base_path / 'tabla_productos/Productos.xlsx'
+tabla_productos = base_path / 'tabla_productos/productos.xlsx'
 df = pd.read_excel(tabla_productos,usecols=['Pro_Pro','Pro_PriAct','Pro_Act'])
 cont=0
 antibiotico=[]
 sustancia=[]
 existentes=[]
 
+filename = input("Introduzca el nombre el archivo que se quiere crear (evita espacios y caracteres especiales):")
+year = input("Introduzca el año que se quiere poner en el documento (ejemplo: 2024):")
 # Obtener datos
 for index, row in df.iterrows():
     if (row['Pro_Pro'].startswith("A1.")) or (row['Pro_Pro'].startswith("A2.")):
@@ -131,7 +133,7 @@ for i in lista:
     hdr_Cells[9].text = 'C. VEN.'
     hdr_Cells[10].text = 'SALDO'
     hdr_Cells[11].text = 'OBSER'
-    menuTable.cell(1,0).text = '2025'
+    menuTable.cell(1,0).text = f'{year}'
     menuTable.cell(1,1).text = 'ENE 1'
     menuTable.cell(1,10).text = str(lista_conjunta[cont][2])
     
@@ -140,5 +142,5 @@ for i in lista:
     cont+=1
     print(f"Escribiendo {cont}")
 
-file_path = base_path / 'Heroico.docx'
+file_path = base_path / f'{filename}.docx'
 document.save(file_path)
